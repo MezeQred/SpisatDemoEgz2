@@ -50,16 +50,15 @@
          </TabItem>
      </TabControl>
  </Grid>
-
-
-     public partial class MainWindow : Window
+                  
+  public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void btnAutorization_Click(object sender, RoutedEventArgs e)
+  private void btnAutorization_Click(object sender, RoutedEventArgs e)
         {
             string login = tbLogin.Text;
             string password = pbPassword.Password;
@@ -79,7 +78,6 @@
                 }
             }    
         }
-
         private void btnRegistr_Click(object sender, RoutedEventArgs e)
         {
             using (var context = new testEntities()) 
@@ -152,11 +150,9 @@
         }
         catch (Exception ex) { MessageBox.Show(ex.Message); }
     }
-    
     private void btnDell_Click(object sender, RoutedEventArgs e)
-    {        
-        
-            using (var context = new testEntities())
+    {         
+      using (var context = new testEntities())
             {
                 var removeRows = dgStud.SelectedItems.Cast<Students>().ToList();
                 if (removeRows.Count() == 0)
@@ -187,14 +183,14 @@
             }
     }
 
-    private void btnAdd_Click(object sender, RoutedEventArgs e)
+   private void btnAdd_Click(object sender, RoutedEventArgs e)
     {
         redWindow redWindow = new redWindow(null);
         redWindow.Show();
         Close();
     }
 
-    private void btnred_Click(object sender, RoutedEventArgs e)
+   private void btnred_Click(object sender, RoutedEventArgs e)
     {
         redWindow redWindow = new redWindow((sender as Button).DataContext as Students);
         redWindow.Show(); 
@@ -243,14 +239,14 @@
      
      }
 
-     private void btnBack_Click(object sender, RoutedEventArgs e)
+   private void btnBack_Click(object sender, RoutedEventArgs e)
      {
          PersonalCabWindow personalCabWindow = new PersonalCabWindow();
          personalCabWindow.Show();
          Close();
      }
 
-     private void SaveBack_Click(object sender, RoutedEventArgs e)
+  private void SaveBack_Click(object sender, RoutedEventArgs e)
      {
          using (var context = new testEntities())
          {
