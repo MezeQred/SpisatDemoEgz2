@@ -1,4 +1,4 @@
- <Grid>
+     <Grid>
      <TabControl>
          <TabItem Header="Авторизация">
              <Grid>
@@ -49,16 +49,16 @@
              </Grid>
          </TabItem>
      </TabControl>
- </Grid>
+    </Grid>
                   
-  public partial class MainWindow : Window
+     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
         }
 
-  private void btnAutorization_Click(object sender, RoutedEventArgs e)
+     private void btnAutorization_Click(object sender, RoutedEventArgs e)
         {
             string login = tbLogin.Text;
             string password = pbPassword.Password;
@@ -103,7 +103,7 @@
         }
 }
 
- <Grid>
+    <Grid>
      <TabControl Grid.Row="1" x:Name="tcImtex">
          <TabItem Header="Студенты" x:Name="tiDgstud">
              <DataGrid Grid.Row="1" AutoGenerateColumns="False" x:Name="dgStud" IsReadOnly="True">
@@ -133,12 +133,12 @@
          <RowDefinition/>
          <RowDefinition Height="75"/>
      </Grid.RowDefinitions>
- </Grid>
+    </Grid>
 
 
- public partial class PersonalCabWindow : Window
-{
-    public PersonalCabWindow()
+       public partial class PersonalCabWindow : Window
+     {
+         public PersonalCabWindow()
     {
         InitializeComponent();
         try
@@ -183,22 +183,22 @@
             }
     }
 
-   private void btnAdd_Click(object sender, RoutedEventArgs e)
+     private void btnAdd_Click(object sender, RoutedEventArgs e)
     {
         redWindow redWindow = new redWindow(null);
         redWindow.Show();
         Close();
     }
 
-   private void btnred_Click(object sender, RoutedEventArgs e)
-    {
+     private void btnred_Click(object sender, RoutedEventArgs e)
+      {
         redWindow redWindow = new redWindow((sender as Button).DataContext as Students);
         redWindow.Show(); 
         Close();
     }
-}
+     }
 
-<Grid Cursor="">
+    <Grid Cursor="">
     <Grid.ColumnDefinitions>
         <ColumnDefinition/>
         <ColumnDefinition/>
@@ -219,10 +219,10 @@
         <TextBox Text="{Binding FirstName}" x:Name="tbName" Width="150" FontSize="25"/>
         <TextBox Text="{Binding LastName}" x:Name="tbFam" Width="150" FontSize="25"/>
     </StackPanel>
-</Grid>
+    </Grid>
 
- public partial class redWindow : Window
- {
+     public partial class redWindow : Window
+    {
      private Students _students = new Students();
      public redWindow(Students students)
      {
@@ -239,14 +239,14 @@
      
      }
 
-   private void btnBack_Click(object sender, RoutedEventArgs e)
+     private void btnBack_Click(object sender, RoutedEventArgs e)
      {
          PersonalCabWindow personalCabWindow = new PersonalCabWindow();
          personalCabWindow.Show();
          Close();
      }
 
-  private void SaveBack_Click(object sender, RoutedEventArgs e)
+     private void SaveBack_Click(object sender, RoutedEventArgs e)
      {
          using (var context = new testEntities())
          {
